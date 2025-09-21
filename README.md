@@ -46,14 +46,18 @@ This project uses **Puppeteer** and **TypeScript** to scrape concert event data 
 1. Clone the repository:
 
 ```bash
+
 git clone https://github.com/AashishKatila/scrap-concerts
 cd scrap
+
 ```
 
 2. Install dependencies:
 
 ```bash
+
 npm install
+
 ```
 
 ## Usage
@@ -61,15 +65,19 @@ npm install
 1. Scrape a single page:
 
 ```bash
+
 npx ts-node index.ts
+
 ```
 
-- Output will be saved to concerts.json.
+- Output will be saved to all-concerts.json.
 
 2. Scrape multiple genres:
 
 ```bash
+
 npx ts-node scrap.ts
+
 ```
 
 - Output will be saved to concerts.json.

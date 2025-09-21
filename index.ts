@@ -97,7 +97,7 @@ const fs = require("fs");
 
   console.log(`Scraping finished. Total items collected: ${allItems.length}`);
 
-  fs.writeFileSync("concerts.json", JSON.stringify(allItems, null, 2));
+  fs.writeFileSync("all-concerts.json", JSON.stringify(allItems, null, 2));
 
   await browser.close();
 })();
