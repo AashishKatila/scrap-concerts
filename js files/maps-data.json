@@ -1,0 +1,51 @@
+[
+  {
+    "url": "https://bhanjyangtravels.com/contact",
+    "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.7210370086423!2d83.9584644!3d28.215786899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399594e17fd85e8d%3A0x6a00549e701eb1e2!2sBhanjyang%20Travels%20and%20treks(P.)%20Ltd.!5e0!3m2!1sen!2snp!4v1752743349919!5m2!1sen!2snp",
+    "name": "Bhanjyang Travels and treks(P.) Ltd.",
+    "latitude": 28.215786899999994,
+    "longitude": 83.9584644
+  },
+  {
+    "url": "https://www.freshelementsrestaurant.com.np/contact",
+    "iframe": "https://maps.google.com/maps?q=fresh%20elements%20pokhara&t=m&z=16&output=embed&iwloc=near",
+    "name": "fresh elements pokhara",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "url": "https://www.treknepal.com/contact",
+    "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28258.91526434292!2d85.27709798640828!3d27.70603287570015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18fd2e53894d%3A0x25a6380bece8292c!2sTrek%20Nepal%20Int'l!5e0!3m2!1sen!2snp!4v1735658859459!5m2!1sen!2snp",
+    "name": "Trek Nepal Int'l",
+    "latitude": 27.70603287570015,
+    "longitude": 85.27709798640828
+  },
+  {
+    "url": "https://byanjan.com/",
+    "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.947029222284!2d83.95488391471201!3d28.208921909878015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995951eec7e3a45%3A0xe8475d9e244d6d98!2sByanjan!5e0!3m2!1sen!2snp!4v1614591628315!5m2!1sen!2snp",
+    "name": "Byanjan",
+    "latitude": 28.208921909878015,
+    "longitude": 83.95488391471201
+  },
+  {
+    "url": "https://bello-blush.vercel.app/contact",
+    "iframe": "https://www.google.com/maps/embed/v1/search?q=bello+blush&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8",
+    "name": "bello blush",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "url": "https://anakibar.com.np",
+    "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.9732893621284!2d83.95720851!3d28.212963703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDEyJzQ2LjciTiA4M8KwNTcnMjYuMCJF!5e0!3m2!1sen!2snp!4v1620000000000!5m2!1sen!2snp",
+    "name": "np",
+    "latitude": 28.212963703,
+    "longitude": 83.95720851
+  },
+  {
+    "url": "https://www.suikhetrivervalleyresort.com",
+    "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3513.430655688313!2d83.8953994755913!3d28.285275775856075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995ed8fd9827c2f%3A0x7d3bf90defe8a400!2sSuikhet%20River%20Valley%20Resort!5e0!3m2!1sen!2snp!4v1750755417148!5m2!1sen!2snp",
+    "name": "Suikhet River Valley Resort",
+    "latitude": 28.285275775856075,
+    "longitude": 83.8953994755913
+  }
+]

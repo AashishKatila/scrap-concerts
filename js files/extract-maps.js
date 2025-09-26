@@ -1,9 +1,23 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
+import fs from "fs";
+
+const filePath = "maps-data.json";
+
+let allMaps = [];
+if (fs.existsSync(filePath)) {
+  try {
+    const data = fs.readFileSync(filePath, "utf-8");
+    allMaps = JSON.parse(data);
+  } catch (err) {
+    console.error("Error reading existing JSON file:", err);
+    allMaps = [];
+  }
+}
 
 async function scrapeGoogleMaps(url) {
   try {
-    const { data: html } = await axios.get(url);
+    const { data: html } = await axios.get(url, { timeout: 10000 });
     const $ = cheerio.load(html);
 
     const maps = [];
@@ -14,12 +28,8 @@ async function scrapeGoogleMaps(url) {
       let longitude = null;
       let name = null;
 
-      if (!iframe) {
-        console.log("No iframe src found");
-        return;
-      }
+      if (!iframe) return;
 
-      //  pb = contains lat/lng and business name
       if (iframe.includes("pb=")) {
         const lonMatch = iframe.match(/!2d([-0-9.]+)/);
         const latMatch = iframe.match(/!3d([-0-9.]+)/);
@@ -30,25 +40,49 @@ async function scrapeGoogleMaps(url) {
         name = nameMatch
           ? decodeURIComponent(nameMatch[1].replace(/\+/g, " "))
           : null;
-
-        // q = only contains search query
       } else if (iframe.includes("q=")) {
         const urlObj = new URL(iframe);
         name = urlObj.searchParams.get("q") || null;
       }
 
-      maps.push({ iframe, name, latitude, longitude });
+      maps.push({ url, iframe, name, latitude, longitude });
     });
 
     return maps;
   } catch (err) {
-    console.error("Error scraping page:", err.message);
+    console.warn(`Skipping ${url} due to error: ${err.message}`);
     return [];
   }
 }
 
 (async () => {
-  const url = "https://bhanjyangtravels.com/";
-  const results = await scrapeGoogleMaps(url);
-  console.log(results);
+  const sites = [
+    "https://bhanjyangtravels.com",
+    "https://www.freshelementsrestaurant.com.np",
+    "https://www.treknepal.com",
+    "https://byanjan.com/",
+    "https://bello-blush.vercel.app",
+    "https://anakibar.com.np",
+    "https://www.suikhetrivervalleyresort.com",
+  ];
+
+  for (const site of sites) {
+    const urlsToTry = [site, `${site}/contact`];
+
+    for (const url of urlsToTry) {
+      console.log(`Scraping Google Maps from: ${url}`);
+      const results = await scrapeGoogleMaps(url);
+      if (results.length > 0) {
+        console.log("Found maps:", results);
+
+        allMaps.push(...results);
+        fs.writeFileSync(filePath, JSON.stringify(allMaps, null, 2), "utf-8");
+
+        break;
+      }
+    }
+  }
+
+  console.log(`Scraping completed. Total entries saved: ${allMaps.length}`);
 })();
+
